@@ -78,7 +78,7 @@ int main()
     player *p;
     
     //preguntas.. 
-    
+
 
     if (p->acierto>=2)
     {
@@ -118,6 +118,56 @@ int main()
                     system("pause");
                 }
                 break;
+            case 2:
+                pptRand=PPT();
+                if (pptRand=="piedra")
+                {
+                    cout<<"La maquina escogio: "<<pptRand<<endl
+                    <<"Tu eleccion fue papel."<<endl
+                    <<"HAS GANADO!"<<endl;
+                    vic++;
+                    system("pause");
+                }else if (pptRand=="papel")
+                {
+                    cout<<"La maquina escogio: "<<pptRand<<endl
+                    <<"Tu eleccion fue papel."<<endl
+                    <<"HAS EMPATADO!"<<endl;
+                    emp++;
+                    system("pause");
+                }else if (pptRand=="tijera")
+                {
+                    cout<<"La maquina escogio: "<<pptRand<<endl
+                    <<"Tu eleccion fue papel."<<endl
+                    <<"HAS PERDIDO!"<<endl;
+                    der++;
+                    system("pause");
+                }
+                break;
+            case 3:
+                pptRand=PPT();
+                if (pptRand=="piedra")
+                {
+                    cout<<"La maquina escogio: "<<pptRand<<endl
+                    <<"Tu eleccion fue tijeras."<<endl
+                    <<"HAS PERDIDO!"<<endl;
+                    der++;
+                    system("pause");
+                }else if (pptRand=="papel")
+                {
+                    cout<<"La maquina escogio: "<<pptRand<<endl
+                    <<"Tu eleccion fue tijeras."<<endl
+                    <<"HAS GANADO!"<<endl;
+                    vic++;
+                    system("pause");
+                }else if (pptRand=="tijera")
+                {
+                    cout<<"La maquina escogio: "<<pptRand<<endl
+                    <<"Tu eleccion fue tijeras."<<endl
+                    <<"HAS EMPATADO!"<<endl;
+                    emp++;
+                    system("pause");
+                }
+                break;
             
             default:
                 break;
@@ -133,7 +183,7 @@ int main()
         system("pause");
     }else
     {
-        int juegos=0, derro=0,vict=0,nR,dec;
+        int juegospar=0, derro=0,vict=0,nR,dec;
         do
         {
             cout << endl<<"Se generara un numero random, elige la puerta que creas que sera la opcion correcta:"<<endl;
@@ -176,8 +226,8 @@ int main()
                 break;
             }
             system("cls");
-            juegos++;
-        } while (juegos!=3);
+            juegospar++;
+        } while (juegospar!=3);
         cout<<"En estos 3 juegos tus victorias fueron: "<<vict<<", tus derrotas fueron: "<<derro<<"."<<endl;
         cout<<"Tus porcentajes(%) fueron: "<<endl
         <<"Victoria: "<<vict*100/3<<"%."<<endl
