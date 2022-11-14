@@ -128,16 +128,22 @@ int main()
     cout << "================================================" << endl;
     char ap;
     char dec;
-
-   
-        /* code */
-
+    cout << "INDICACIONES"<<endl;
+    cout << "--------------------------------------------------------------------------------------------------------------------------" << endl;
+    cout << "En este juego tendras que contestar preguntas y deacuerdo a tu cantidad de aciertos se presentaran 2 juegos diferentes." << endl;
+    cout << "Es decir, si tu cantidad de aciertos es mayor o igual a 3, jugaras piedra, papel o tijeras, contra la maquina." << endl;
+    cout << "De lo contrario se generara un numero completamente random del 1 al 10 y tu sin saberlo tendras que decidir si el numero es par o impar." << endl;
+    cout << "De acuerdo a tus resultados obtendras un porcentaje para saber cuanto has acertado y errado en el juego. SUERTE!" << endl
+         << endl;
+    system("pause");
+    system("cls");
         cout << endl
              << "Que son permutaciones y como se conoce a la totalidad de permutaciones?" << endl
              << endl;
         cout << "a)Totalidad de elementos posibles de un suceso o evento, donde el orden importa. El factorial de un numero." << endl
              << endl;
         cout << "b)Tecnica para calcular la probabilidad de que se de un suceso. Numero factorial." << endl;
+        cout<<"Digite la opcion que crea correcta: ";
         cin >> dec;
         yourDec(dec, acierto, fallo, ap = 'a');
 
@@ -147,13 +153,40 @@ int main()
         cout << "a)No importa el orden en las permutaciones." << endl
              << endl;
         cout << "b)El orden no es importante en las combinaciones." << endl;
+        cout<<"Digite la opcion que crea correcta: ";
         cin >> dec;
         yourDec(dec, acierto, fallo, ap = 'b');
 
+        cout<<endl;
+        cout<<"En cuántas formas puede un presidente, un tesorero y un secretario ser escogidos de 7 candidatos?"<<endl;
+        cout<<"a)170.            b)210."<<endl;
+        cout<<"Digite la opcion que crea correcta: ";
+        cin>>dec;
+        yourDec(dec,acierto,fallo,ap='b');
+
+        cout<<endl;
+        cout<<"Un chef va a preparar una ensalada de verduras con tomate, zanahoria, papa y brócoli." 
+        <<"De cuantas formas se puede preparar la ensalada usando solo 2 ingredientes?"<<endl;
+        cout<<"a)6.             b)8."<<endl;
+        cout<<"Digite la opcion que crea correcta: ";
+        cin>>dec;
+        yourDec(dec,acierto,fallo,ap='a');
+
+        cout<<endl;
+        cout<<"Cuanto es el factorial de 5?"<<endl;
+        cout<<"a)150.             b)120."<<endl;
+        cout<<"Digite la opcion que crea correcta: ";
+        cin>>dec;
+        yourDec(dec,acierto,fallo,ap='b');
+
+        cout<<"Tus aciertos en las anteriores preguntas fueron: "<<acierto<<" y tus respuestas erroneas fueron "<<fallo<<"."<<endl;
+        cout<<"Tus porcentajes(%) son: "<<endl;
+        cout<<"Acierto: "<<acierto*100/5<<"%."<<endl;
+        cout<<"Error: "<<fallo*100/5<<"%."<<endl;
+        system("pause");
+        system("cls");
 
 
-
-    
     if (acierto>=3)
     {
         int opc,der=0,vic=0,emp=0,juegos=0;string pptRand;
