@@ -2,12 +2,6 @@
 #include <stdlib.h>
 #include <time.h>
 using namespace std;
-
-struct player
-{
-    string name;
-    int acierto=0,fallo=0;
-};
 void creatingDoor(int num[])
 {
     cout<<"------------------------------------------"<<endl;
@@ -74,13 +68,12 @@ string PPT()
     return ppt;
 }
 int main()
-{
-    player *p;
-    
+{   
+    int acierto=0,fallo=0;
     //preguntas.. 
+    
 
-
-    if (p->acierto>=2)
+    if (acierto>=2)
     {
         int opc,der=0,vic=0,emp=0,juegos=0;string pptRand;
         do
@@ -89,7 +82,7 @@ int main()
             <<"Opcion 1: Piedra."<<endl
             <<"Opcion 2: Papel."<<endl
             <<"Opcion 3: Tijera."<<endl
-            <<"Elije una de las 3 opciones:";
+            <<"Elije una de las 3 opciones: ";
             cin>>opc;
             switch (opc)
             {
@@ -218,7 +211,7 @@ int main()
                     }else
                     {
                         cout<<"El numero generado es: "<<nR<<", haz tomado la decision incorrecta."<<endl;
-                    derro++;
+                        derro++;
                     };
                     system("pause");
                     break;
