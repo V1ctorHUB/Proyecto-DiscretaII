@@ -53,10 +53,76 @@ int numeroRandom()
         return num;
     }
 }
+string PPT()
+{
+    int num;string ppt;
+    srand(time(NULL));
+    for (int c = 0; c < 10; c++)
+    {
+        num=1+rand()%(4-1);
+    }
+    if (num==1)
+    {
+        ppt="piedra";
+    }else if (num==2)
+    {
+        ppt="papel";
+    }else if (num==3)
+    {
+       ppt="tijera"; 
+    }
+    return ppt;
+}
 int main()
 {
-    player *p;
-
-    //aqui ponene las preguntas y en las respuestas correctas hacen el p.acierto++ para que le aumente en 1, sino le hacen al de los fallos.
-
+    player *p;int opc,der=0,vic=0,emp=0,juegos=0;string pptRand;
+    do
+    {
+        cout<<"        MENU. "<<endl
+        <<"Opcion 1: Piedra."<<endl
+        <<"Opcion 2: Papel."<<endl
+        <<"Opcion 3: Tijera."<<endl
+        <<"Elije una de las 3 opciones:";
+        cin>>opc;
+        switch (opc)
+        {
+        case 1:
+            pptRand=PPT();
+            if (pptRand=="piedra")
+            {
+                cout<<"La maquina escogio: "<<pptRand<<endl
+                <<"Tu eleccion fue piedra."<<endl
+                <<"HAS EMPATADO!"<<endl;
+                emp++;
+                system("pause");
+            }else if (pptRand=="papel")
+            {
+                cout<<"La maquina escogio: "<<pptRand<<endl
+                <<"Tu eleccion fue piedra."<<endl
+                <<"HAS PERDIDO!"<<endl;
+                der++;
+                system("pause");
+            }else if (pptRand=="tijera")
+            {
+                cout<<"La maquina escogio: "<<pptRand<<endl
+                <<"Tu eleccion fue piedra."<<endl
+                <<"HAS GANADO!"<<endl;
+                vic++;
+                system("pause");
+            }
+            break;
+        
+        default:
+            break;
+        }  
+        system("cls");  
+        juegos++;
+    } while (juegos!=3);
+    cout<<"En estos 3 juegos, tus victorias fueron: "<<vic<<", tus empates fueron: "<<emp<<" tus derrotas fueron: "<<der<<endl
+    <<"Tus porcentajes(%) son: "<<endl
+    <<"Victoria: "<<vic*100/3<<"%."<<endl
+    <<"Empate: "<<emp*100/3<<"%"<<endl
+    <<"Derrota: "<<der*100/3<<"%"<<endl;
+    system("pause");
+    return 0;
 }
