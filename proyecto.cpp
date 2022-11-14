@@ -38,7 +38,7 @@ void creatingDoor(int num[])
             cout << "|        ";
         }
     }
-    cout <<endl<<endl<< "a)Numero PAR. \t\t b) Numero IMPAR." << endl;
+    cout <<endl<<endl<< "  1)Numero PAR. \t2) Numero IMPAR." << endl;
         cout<<"------------------------------------------";
 
 }
@@ -75,54 +75,114 @@ string PPT()
 }
 int main()
 {
-    player *p;int opc,der=0,vic=0,emp=0,juegos=0;string pptRand;
-    do
+    player *p;
+    
+    //preguntas.. 
+    
+
+    if (p->acierto>=2)
     {
-        cout<<"        MENU. "<<endl
-        <<"Opcion 1: Piedra."<<endl
-        <<"Opcion 2: Papel."<<endl
-        <<"Opcion 3: Tijera."<<endl
-        <<"Elije una de las 3 opciones:";
-        cin>>opc;
-        switch (opc)
+        int opc,der=0,vic=0,emp=0,juegos=0;string pptRand;
+        do
         {
-        case 1:
-            pptRand=PPT();
-            if (pptRand=="piedra")
+            cout<<"        MENU. "<<endl
+            <<"Opcion 1: Piedra."<<endl
+            <<"Opcion 2: Papel."<<endl
+            <<"Opcion 3: Tijera."<<endl
+            <<"Elije una de las 3 opciones:";
+            cin>>opc;
+            switch (opc)
             {
-                cout<<"La maquina escogio: "<<pptRand<<endl
-                <<"Tu eleccion fue piedra."<<endl
-                <<"HAS EMPATADO!"<<endl;
-                emp++;
-                system("pause");
-            }else if (pptRand=="papel")
+            case 1:
+                pptRand=PPT();
+                if (pptRand=="piedra")
+                {
+                    cout<<"La maquina escogio: "<<pptRand<<endl
+                    <<"Tu eleccion fue piedra."<<endl
+                    <<"HAS EMPATADO!"<<endl;
+                    emp++;
+                    system("pause");
+                }else if (pptRand=="papel")
+                {
+                    cout<<"La maquina escogio: "<<pptRand<<endl
+                    <<"Tu eleccion fue piedra."<<endl
+                    <<"HAS PERDIDO!"<<endl;
+                    der++;
+                    system("pause");
+                }else if (pptRand=="tijera")
+                {
+                    cout<<"La maquina escogio: "<<pptRand<<endl
+                    <<"Tu eleccion fue piedra."<<endl
+                    <<"HAS GANADO!"<<endl;
+                    vic++;
+                    system("pause");
+                }
+                break;
+            
+            default:
+                break;
+            }  
+            system("cls");  
+            juegos++;
+        } while (juegos!=3);
+        cout<<"En estos 3 juegos, tus victorias fueron: "<<vic<<", tus empates fueron: "<<emp<<" tus derrotas fueron: "<<der<<"."<<endl
+        <<"Tus porcentajes(%) son: "<<endl
+        <<"Victoria: "<<vic*100/3<<"%."<<endl
+        <<"Empate: "<<emp*100/3<<"%"<<endl
+        <<"Derrota: "<<der*100/3<<"%"<<endl;
+        system("pause");
+    }else
+    {
+        int juegos=0, derro=0,vict=0,nR,dec;
+        do
+        {
+            cout << endl<<"Se generara un numero random, elige la puerta que creas que sera la opcion correcta:"<<endl;
+            int num[] = {201, 203, 203, 203, 203, 203, 203, 203, 203, 203, 203, 203, 203, 187, 186, 186, 186, 186, 186, 186, 186, 186, 186, 186, 186, 186,186, 186, 206, 206, 206, 206, 206,
+                        206, 206, 206,206, 206, 206, 206, 206,
+                        206, 186, 186, 186, 186, 186, 186, 186,  186, 186, 186, 186, 186, 186, 186, 186, 186, 186, 186, 186, 186, 186, 186,  186, 186, 186, 186, 186, 186, 186, 186,  186, 186, 186, 186, 186, 186, 186, 186, 186, 186, 186, 186, 186, 186, 186,  186, 186, 186, 186, 186, 186, 186, 186, 186, 186, 186};
+            creatingDoor(num);
+            cout << endl;
+            cout << "Elige una puerta: ";
+            cin >> dec;
+            switch (dec)
             {
-                cout<<"La maquina escogio: "<<pptRand<<endl
-                <<"Tu eleccion fue piedra."<<endl
-                <<"HAS PERDIDO!"<<endl;
-                der++;
-                system("pause");
-            }else if (pptRand=="tijera")
-            {
-                cout<<"La maquina escogio: "<<pptRand<<endl
-                <<"Tu eleccion fue piedra."<<endl
-                <<"HAS GANADO!"<<endl;
-                vic++;
-                system("pause");
+            case 1:
+                    nR=numeroRandom();
+                    if (nR%2==0)
+                    {
+                        cout<<"El numero generado es: "<<nR<<", haz tomado la decision correcta."<<endl;
+                        vict++;
+                    }else
+                    {
+                        cout<<"El numero generado es: "<<nR<<", haz tomado la decision incorrecta."<<endl;
+                        derro++;
+                    };
+                    system("pause");
+                    break;
+            case 2:
+                    nR=numeroRandom();
+                    if (nR%2!=0)
+                    {
+                        cout<<"El numero generado es: "<<nR<<", haz tomado la decision correcta."<<endl;
+                        vict++;
+                    }else
+                    {
+                        cout<<"El numero generado es: "<<nR<<", haz tomado la decision incorrecta."<<endl;
+                    derro++;
+                    };
+                    system("pause");
+                    break;
+            default:
+                break;
             }
-            break;
-        
-        default:
-            break;
-        }  
-        system("cls");  
-        juegos++;
-    } while (juegos!=3);
-    cout<<"En estos 3 juegos, tus victorias fueron: "<<vic<<", tus empates fueron: "<<emp<<" tus derrotas fueron: "<<der<<endl
-    <<"Tus porcentajes(%) son: "<<endl
-    <<"Victoria: "<<vic*100/3<<"%."<<endl
-    <<"Empate: "<<emp*100/3<<"%"<<endl
-    <<"Derrota: "<<der*100/3<<"%"<<endl;
-    system("pause");
+            system("cls");
+            juegos++;
+        } while (juegos!=3);
+        cout<<"En estos 3 juegos tus victorias fueron: "<<vict<<", tus derrotas fueron: "<<derro<<"."<<endl;
+        cout<<"Tus porcentajes(%) fueron: "<<endl
+        <<"Victoria: "<<vict*100/3<<"%."<<endl
+        <<"Derrota: "<<derro*100/3<<"%."<<endl;
+        system("pause");    
+    }
     return 0;
 }
