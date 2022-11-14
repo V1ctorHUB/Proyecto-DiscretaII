@@ -67,13 +67,94 @@ string PPT()
     }
     return ppt;
 }
+void yourDec(char dec, int &a, int &f, char ap)
+{
+start:
+    switch (dec)
+    {
+    case 'a':
+        if (dec == ap)
+        {
+            cout << "Correcto! :) " << endl;
+            a++;
+        }
+        else if (dec != ap)
+        {
+            cout << "Incorrecto :( ..." << endl;
+            f++;
+        }
+        break;
+    case 'b':
+        if (dec == ap)
+        {
+            cout << "Correcto! :) " << endl;
+            a++;
+        }
+        else if (dec != ap)
+        {
+            cout << "Incorrecto :( ..." << endl;
+            f++;
+        }
+        break;
+    default:
+
+        cout << endl
+             << "Vuelva a ingresar un valor correcto " << endl;
+        cin >> dec;
+
+        goto start;
+
+        break;
+    }
+
+    cout << endl
+         << "Ha acertado " << a << " veces! :D" << endl;
+    cout << endl
+         << "Ha fallado " << f << " veces! D:" << endl;
+
+    system("pause");
+    system("cls");
+}
 int main()
 {   
     int acierto=0,fallo=0;
-    //preguntas.. 
-    
+    string name;
+    cout << "Ingrese su nombre: ";
+    getline(cin, name);
 
-    if (acierto>=2)
+    cout << endl;
+    cout << "================================================" << endl;
+    cout << "   |BIENVENIDO JUGADOR " << name << " :D     " << endl;
+    cout << "================================================" << endl;
+    char ap;
+    char dec;
+
+   
+        /* code */
+
+        cout << endl
+             << "Que son permutaciones y como se conoce a la totalidad de permutaciones?" << endl
+             << endl;
+        cout << "a)Totalidad de elementos posibles de un suceso o evento, donde el orden importa. El factorial de un numero." << endl
+             << endl;
+        cout << "b)Tecnica para calcular la probabilidad de que se de un suceso. Numero factorial." << endl;
+        cin >> dec;
+        yourDec(dec, acierto, fallo, ap = 'a');
+
+        cout << endl
+             << "Cual es la principal diferencia entre combinaciones y permutaciones? " << endl
+             << endl;
+        cout << "a)No importa el orden en las permutaciones." << endl
+             << endl;
+        cout << "b)El orden no es importante en las combinaciones." << endl;
+        cin >> dec;
+        yourDec(dec, acierto, fallo, ap = 'b');
+
+
+
+
+    
+    if (acierto>=3)
     {
         int opc,der=0,vic=0,emp=0,juegos=0;string pptRand;
         do
