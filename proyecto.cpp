@@ -158,14 +158,14 @@ int main()
         yourDec(dec, acierto, fallo, ap = 'b');
 
         cout<<endl;
-        cout<<"En cuántas formas puede un presidente, un tesorero y un secretario ser escogidos de 7 candidatos?"<<endl;
+        cout<<"En cuantas formas puede un presidente, un tesorero y un secretario ser escogidos de 7 candidatos?"<<endl;
         cout<<"a)170.            b)210."<<endl;
         cout<<"Digite la opcion que crea correcta: ";
         cin>>dec;
         yourDec(dec,acierto,fallo,ap='b');
 
         cout<<endl;
-        cout<<"Un chef va a preparar una ensalada de verduras con tomate, zanahoria, papa y brócoli." 
+        cout<<"Un chef va a preparar una ensalada de verduras con tomate, zanahoria, papa y brocoli." 
         <<"De cuantas formas se puede preparar la ensalada usando solo 2 ingredientes?"<<endl;
         cout<<"a)6.             b)8."<<endl;
         cout<<"Digite la opcion que crea correcta: ";
