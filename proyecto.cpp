@@ -179,7 +179,7 @@ int main()
         cin>>dec;
         yourDec(dec,acierto,fallo,ap='b');
 
-        cout<<"Tus aciertos en las anteriores preguntas fueron: "<<acierto<<" y tus respuestas erroneas fueron "<<fallo<<"."<<endl;
+        cout<<"Tus aciertos en las anteriores preguntas fueron: "<<acierto<<" y tus errores fueron "<<fallo<<"."<<endl;
         cout<<"Tus porcentajes(%) son: "<<endl;
         cout<<"Acierto: "<<acierto*100/5<<"%."<<endl;
         cout<<"Error: "<<fallo*100/5<<"%."<<endl;
